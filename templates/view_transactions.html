@@ -1,0 +1,137 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Transactions - Bank Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>View Transactions</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('create_account') }}">Create Account</a></li>
+            <li><a href="{{ url_for('view_balance') }}">View Balance</a></li>
+            <li><a href="{{ url_for('credit_account') }}">Credit Amount</a></li>
+            <li><a href="{{ url_for('debit_account') }}">Debit Amount</a></li>          
+            <li><a href="{{ url_for('view_transactions') }}">View Transactions</a></li>
+            <li><a href="{{ url_for('delete_account') }}">Delete Account</a></li>
+        </ul>
+    </nav>
+
+    <section class="form-container">
+        <form action="{{ url_for('view_transactions') }}" method="POST">
+            <label for="account_number">Account Number:</label>
+            <input type="text" id="account_number" name="account_number" required>
+            <button type="submit">View Transactions</button>
+        </form>
+
+        <div class="transactions-info">
+            <h3>Transaction History:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Type</th>
+                        <th>Initial Amount</th>
+                        <th>Amount Changed</th>
+                        <th>Transaction Date</th>
+                    </tr>
+                </thead>
+                <!-- <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Credit</td>
+                        <td>500.00</td>
+                        <td>+200.00</td>
+                        <td>2024-12-16</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Debit</td>
+                        <td>1000.00</td>
+                        <td>-300.00</td>
+                        <td>2024-12-15</td>
+                    </tr>
+                </tbody> -->
+           <!-- </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bank Management System</p>
+    </footer>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Transactions - Bank Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>View Transactions</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('create_account') }}">Create Account</a></li>
+            <li><a href="{{ url_for('view_balance') }}">View Balance</a></li>
+            <li><a href="{{ url_for('credit_account') }}">Credit Amount</a></li>
+            <li><a href="{{ url_for('debit_account') }}">Debit Amount</a></li>          
+            <li><a href="{{ url_for('view_transactions') }}">View Transactions</a></li>
+            <li><a href="{{ url_for('delete_account') }}">Delete Account</a></li>
+        </ul>
+    </nav>
+
+    <section class="form-container">
+        <form action="{{ url_for('view_transactions') }}" method="POST">
+            <label for="account_number">Account Number:</label>
+            <input type="text" id="account_number" name="account_number" required>
+            <button type="submit">View Transactions</button>
+        </form>
+
+        {% if transactions %}
+        <div class="transactions-info">
+            <h3>Transaction History for Account {{ account_number }}:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Type</th>
+                        <th>Initial Amount</th>
+                        <th>Amount Changed</th>
+                        <th>Transaction Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for transaction in transactions %}
+                    <tr>
+                        <td>{{ transaction[0] }}</td> <!-- Adjust indices based on column order -->
+                        <td>{{ transaction[1] }}</td>
+                        <td>{{ transaction[2] }}</td>
+                        <td>{{ transaction[3] }}</td>
+                        <td>{{ transaction[4] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>No transactions found for the provided account number.</p>
+        {% endif %}
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bank Management System</p>
+    </footer>
+</body>
+</html>

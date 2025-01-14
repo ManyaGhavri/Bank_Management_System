@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Balance - Bank Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>View Balance</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('create_account') }}">Create Account</a></li>
+            <li><a href="{{ url_for('view_balance') }}">View Balance</a></li>
+            <li><a href="{{ url_for('credit_account') }}">Credit Amount</a></li>
+            <li><a href="{{ url_for('debit_account') }}">Debit Amount</a></li>           
+            <li><a href="{{ url_for('view_transactions') }}">View Transactions</a></li>
+            <li><a href="{{ url_for('delete_account') }}">Delete Account</a></li>
+        </ul>
+    </nav>
+
+    <!-- <section class="form-container">
+        <h2>Account Details</h2>
+        <form method="POST" action="{{ url_for('view_balance') }}">
+            <label for="account_number">Account Number:</label>
+            <input type="text" id="account_number" name="account_number" required>
+            <button type="submit">Get Balance</button>
+        </form> -->
+        <!-- <p><a href="{{ url_for('credit_account') }}">Credit Account</a></p>
+        <p><a href="{{ url_for('debit_account') }}">Debit Account</a></li>          -->
+
+        <!-- <div class="balance-info">
+            <h3>Your Current Balance:</h3>
+            <p id="balance">hello</p>
+            <h4>Credit or Debit Account</h4>
+            <button>Credit Account</button><p><a href="{{ url_for('credit_account') }}">Credit Account</a></p>
+            <button>Debit Account</button><p><a href="{{ url_for('debit_account') }}">Debit Account</a></li>    
+        </div>
+    </section> -->
+
+
+    <section class="form-container">
+        <h2>Account Details</h2>
+        <form method="POST" action="{{ url_for('view_balance') }}">
+            <label for="account_number">Account Number:</label>
+            <input type="text" id="account_number" name="account_number" required>
+            <button type="submit">Get Balance</button>
+        </form>
+
+        <div class="balance-info">
+            {% if balance is not none %}
+                <h3>Your Current Balance:</h3>
+                <p id="balance">{{ balance }}</p>
+                <h4>Credit or Debit Account</h4>
+                <p><a href="{{ url_for('credit_account') }}">Credit Account</a></p>
+                <p><a href="{{ url_for('debit_account') }}">Debit Account</a></p>
+            {% else %}
+                <p id="balance">No balance information available. Please enter a valid account number.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bank Management System</p>
+    </footer>
+</body>
+</html>

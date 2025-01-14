@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Bank Management System</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('create_account') }}">Create Account</a></li>
+            <li><a href="{{ url_for('view_balance') }}">View Balance</a></li>
+            <li><a href="{{ url_for('credit_account') }}">Credit Amount</a></li>
+            <li><a href="{{ url_for('debit_account') }}">Debit Amount</a></li>           
+            <li><a href="{{ url_for('view_transactions') }}">View Transactions</a></li>
+            <li><a href="{{ url_for('delete_account') }}">Delete Account</a></li>
+
+
+        </ul>
+    </nav>
+
+    <footer>
+        <p>&copy; 2024 Bank Management System</p>
+    </footer>
+</body>
+</html>
