@@ -68,6 +68,12 @@ This project is a web-based **Bank Management System** built using **Flask**, a 
        ![Delete Screen](https://raw.githubusercontent.com/ManyaGhavri/Bank_Management_System/main/static/images/delete.png)
 
 
+   ## 🎥 Video Demonstration  
+
+[Click here to watch the video](https://github.com/ManyaGhavri/Bank_Management_System/raw/main/static/images/video%20(1).mp4)
+
+
+
        
 
 
