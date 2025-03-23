@@ -29,13 +29,48 @@ This project is a web-based **Bank Management System** built using **Flask**, a 
 ### 6. **Website Preview**
    - Below are screenshots of the website's main pages to give you a quick preview of the interface:
      - **Home Page**
-       ![Home Page](screenshots/home_page.png)
+    
+       ![Welcome Screen](https://raw.githubusercontent.com/ManyaGhavri/Bank_Management_System/main/static/images/welcome.png)
+
+       
      - **Login Page**
-       ![Login Page](screenshots/login_page.png)
+       
+       ![Login Screen](https://raw.githubusercontent.com/ManyaGhavri/Bank_Management_System/main/static/images/login.png)
+
      - **Account Creation Page**
-       ![Create Account Page](screenshots/create_account_page.png)
-     - **Transaction Page**
-       ![Transaction Page](screenshots/transaction_page.png)
+   
+       ![Create Account Screen](https://raw.githubusercontent.com/ManyaGhavri/Bank_Management_System/main/static/images/create_account.png)
+
+
+     - **View Balance Page**
+
+       
+        ![View Balance Screen](https://raw.githubusercontent.com/ManyaGhavri/Bank_Management_System/main/static/images/view_balance.png)
+
+        
+     - **Credit Account Page**
+    
+       ![Credit Account Screen](https://raw.githubusercontent.com/ManyaGhavri/Bank_Management_System/main/static/images/credit_account.png)
+
+
+     - **Debit Account Page**
+    
+       ![Debit Account Screen](https://raw.githubusercontent.com/ManyaGhavri/Bank_Management_System/main/static/images/debit_account.png)
+
+
+     - **View Transaction Page**
+    
+       ![View Transaction Screen](https://raw.githubusercontent.com/ManyaGhavri/Bank_Management_System/main/static/images/view_transaction.png)
+
+
+     - **Delete Account Page**
+
+       ![Delete Screen](https://raw.githubusercontent.com/ManyaGhavri/Bank_Management_System/main/static/images/delete.png)
+
+
+       
+
+
 
 ---
 
